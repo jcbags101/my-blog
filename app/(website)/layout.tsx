@@ -50,7 +50,7 @@ export async function generateMetadata({ params }) {
 export default async function Layout({ children, params }) {
   const settings = await getSettings();
   return (
-    <div className="bg-[#E1E1E1]">
+    <div className="mx-auto">
       <Navbar {...settings} />
 
       <div>{children}</div>

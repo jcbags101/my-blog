@@ -29,7 +29,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cx(inter.variable, lora.variable, poppins.variable)}>
-      <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
+      <body className="flex w-full items-center justify-center bg-[#E1E1E1] text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <Providers>{children}</Providers>
       </body>
     </html>

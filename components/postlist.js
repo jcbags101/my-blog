@@ -30,7 +30,7 @@ export default function PostList({
         )}>
         <div
           className={cx(
-            " overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800"
+            "overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800"
           )}>
           <Link
             className={cx(
@@ -38,8 +38,8 @@ export default function PostList({
               aspect === "landscape"
                 ? "aspect-video"
                 : aspect === "custom"
-                ? "aspect-[5/4]"
-                : "aspect-square"
+                  ? "aspect-[5/4]"
+                  : "aspect-square"
             )}
             href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${
               post.slug.current
@@ -66,7 +66,7 @@ export default function PostList({
         </div>
 
         <div className={cx(minimal && "flex items-center")}>
-          <div>
+          <div className="w-full">
             <CategoryLabel
               categories={post.categories}
               nomargin={minimal}
@@ -76,8 +76,8 @@ export default function PostList({
                 fontSize === "large"
                   ? "text-2xl"
                   : minimal
-                  ? "text-3xl"
-                  : "text-lg",
+                    ? "text-3xl"
+                    : "text-lg",
                 fontWeight === "normal"
                   ? "line-clamp-2 font-medium  tracking-normal text-black"
                   : "font-semibold leading-snug tracking-tight",
@@ -113,7 +113,7 @@ export default function PostList({
               )}
             </div>
 
-            <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+            <div className="mt-3 grid grid-cols-2 text-gray-500 dark:text-gray-400">
               <Link href={`/author/${post?.author?.slug?.current}`}>
                 <div className="flex items-center gap-3">
                   <div className="relative h-5 w-5 flex-shrink-0">
@@ -132,11 +132,8 @@ export default function PostList({
                   </span>
                 </div>
               </Link>
-              <span className="text-xs text-gray-300 dark:text-gray-600">
-                &bull;
-              </span>
               <time
-                className="truncate text-sm"
+                className="justify-self-end truncate text-sm"
                 dateTime={post?.publishedAt || post._createdAt}>
                 {format(
                   parseISO(post?.publishedAt || post._createdAt),

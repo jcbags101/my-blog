@@ -24,6 +24,9 @@ module.exports = {
         "3/2": "3 / 2",
         "2/3": "2 / 3",
         "9/16": "9 / 16"
+      },
+      gridTemplateColumns: {
+        "2/3-1/3": "2fr 1fr"
       }
     }
   },
