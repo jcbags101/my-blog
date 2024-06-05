@@ -14,6 +14,8 @@ export default function Post(props) {
 
   const slug = post?.slug;
 
+  console.log("props", props);
+
   if (!loading && !slug) {
     notFound();
   }

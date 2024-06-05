@@ -19,28 +19,17 @@ export default function Navbar(props) {
     {
       label: "About",
       href: "/about"
-    },
-    {
-      label: "Contact",
-      href: "/contact"
     }
   ];
 
   const rightmenu = [
     {
-      label: "Archive",
-      href: "/archive"
+      label: "All Posts",
+      href: "/all-posts"
     },
     {
-      label: "Pro Version",
-      href: "https://stablo-pro.web3templates.com/",
-      external: true,
-      badge: "new"
-    },
-    {
-      label: "Download",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-      external: true
+      label: "Contact",
+      href: "/contact"
     }
   ];
 
@@ -80,27 +69,31 @@ export default function Navbar(props) {
                     {props.logo ? (
                       <Image
                         {...urlForImage(props.logo)}
-                        alt="Logo"
+                        alt="HadiBlog Logo"
                         priority={true}
-                        sizes="(max-width: 640px) 100vw, 200px"
+                        sizes="(max-width: 840px) 100vw, 300px"
+                        width={props.logoWidth || 220}
+                        height={props.logoHeight || 80}
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        HadiBlog
                       </span>
                     )}
                   </Link>
                   <Link href="/" className="hidden w-28 dark:block">
                     {props.logoalt ? (
                       <Image
-                        {...urlForImage(props.logoalt)}
-                        alt="Logo"
+                        {...urlForImage(props.logo)}
+                        alt="HadiBlog Logo"
                         priority={true}
-                        sizes="(max-width: 640px) 100vw, 200px"
+                        sizes="(max-width: 640px) 100vw, 300px"
+                        width={220}
+                        height={80}
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        HadiBlog
                       </span>
                     )}
                   </Link>
