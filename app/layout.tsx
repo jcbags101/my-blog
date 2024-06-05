@@ -1,7 +1,7 @@
 import "@/styles/tailwind.css";
 import { Providers } from "./providers";
 import { cx } from "@/utils/all";
-import { Inter, Lora } from "next/font/google";
+import { Inter, Lora, Poppins } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,6 +13,12 @@ const lora = Lora({
   variable: "--font-lora"
 });
 
+const poppins = Poppins({
+  weight: "400", // Add this line. Choose a value that fits your needs.
+  subsets: ["latin"],
+  variable: "--font-poppins"
+});
+
 export default function RootLayout({
   children
 }: {
@@ -22,8 +28,8 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cx(inter.variable, lora.variable)}>
-      <body className="antialiased text-gray-800 dark:bg-black dark:text-gray-400">
+      className={cx(inter.variable, lora.variable, poppins.variable)}>
+      <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <Providers>{children}</Providers>
       </body>
     </html>
